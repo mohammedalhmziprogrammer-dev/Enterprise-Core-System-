@@ -16,3 +16,7 @@ frontend/.env
 # عام
 .vscode/
 .env
+db.sqlite3
+*.pyc
+__pycache__/
+tests_ufuq.rar

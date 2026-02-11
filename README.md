@@ -25,4 +25,5 @@ npm start
 
 ## ملاحظات
 
-![لوحة التحكم](assets/dashbord.png)
+![لوحة التحكم]
+(assets/dashbord.png)

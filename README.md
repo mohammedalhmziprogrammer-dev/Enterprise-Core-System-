@@ -12,7 +12,6 @@ Enterprise Core System (Personal Project)
 Technologies Used:
 
 - Django, Django REST Framework
-- React.js
 - PostgreSQL
 - Git & GitHub
 
@@ -65,11 +64,6 @@ Role:
 • -python manage.py migrate
 • -python manage.py runserver
 
-#### Frontend
-
-• -cd frontend
-• -npm install
-• -npm run dev -python manage.py runserver
 
 ## ملاحظات
 

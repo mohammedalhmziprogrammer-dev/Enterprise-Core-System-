@@ -25,8 +25,9 @@ class Role(BaseGroup):
         related_name='group_roles',
         help_text=_("The group roles of this group, if any."),
     )
-    codingCategory=models.ManyToManyField(CodingCategory,blank=True)
-    coding=models.ManyToManyField(Coding,blank=True)
+    codingCategory=models.ManyToManyField(CodingCategory,blank=True,verbose_name=_("Coding categories"))
+    coding=models.ManyToManyField(Coding,blank=True,verbose_name=_("Codings"))
+    is_active=models.BooleanField(default=True,verbose_name=_("Active"))
     class Meta:
         verbose_name = _("Role")
         verbose_name_plural = _("Roles")
@@ -40,6 +41,7 @@ class User(BaseUser):
         blank=True,
         related_name='stractures_user',
         help_text=_("The stractures of this user belongs to."),
+        verbose_name=_("Structures"),
     )
     direct_manager = models.ForeignKey(
         'self',
@@ -47,10 +49,10 @@ class User(BaseUser):
         null=True,
         blank=True,
         related_name='subordinates',
-        verbose_name=_("المسؤول المباشر")
+        verbose_name=_("Direct manager")
     )
     data_visibility = models.CharField(
-        _("صلاحيات رؤية البيانات"),
+        _("Data visibility"),
         max_length=10,
         choices=[
             ('self', _('بيانات المستخدم فقط')),
@@ -59,13 +61,14 @@ class User(BaseUser):
         ],
         default='self'
     )
-    must_change_password = models.BooleanField(_("يجب تغيير كلمة المرور"), default=True)
-    phone = models.CharField(verbose_name='رقم الجوال',max_length=32)
+    must_change_password = models.BooleanField(_("Must change password"), default=True)
+    phone = models.CharField(verbose_name='Phone number',max_length=32 ,null=True, blank=True)
+    token_version = models.PositiveIntegerField(default=1,verbose_name='Token version')
 
 
     class Meta:
-        verbose_name = _("مستخدم")
-        verbose_name_plural = _("المستخدمين")
+        verbose_name = _("User")
+        verbose_name_plural = _("Users")
     def __str__(self):
         return f"{self.first_name} {self.last_name} ({self.username})"
     
@@ -84,13 +87,13 @@ class User(BaseUser):
     
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        if self._roles:
-            groups = hasattr(self._roles,'role') and [self._roles.role] or [role.role for role in self._roles] 
-            self.groups.add(*groups)
-            self._roles = None
-            self.save()
-        roles = Role.objects.filter(group__isnull=False).exclude(group_ptr__in=self.groups.all())
-        groups =  [group.role for group in roles.filter(~Q(group_ptr__in=self.groups.all()))]
-        if groups:
-           self.groups.add(*groups) 
+        # if self._roles:
+        #     groups = hasattr(self._roles,'role') and [self._roles.role] or [role.role for role in self._roles] 
+        #     self.groups.add(*groups)
+        #     self._roles = None
+        #     self.save()
+        # roles = Role.objects.filter(group__isnull=False).exclude(group_ptr__in=self.groups.all())
+        # groups =  [group.role for group in roles.filter(~Q(group_ptr__in=self.groups.all()))]
+        # if groups:
+        #    self.groups.add(*groups) 
         

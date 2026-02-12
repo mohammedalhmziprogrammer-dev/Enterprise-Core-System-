@@ -1,0 +1,429 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-09 00:12+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: .\activity_logs\apps.py:7
+msgid "Activity Logs"
+msgstr "سجلات النشاط"
+
+#: .\activity_logs\models.py:18
+msgid "انشاء"
+msgstr "انشاء"
+
+#: .\activity_logs\models.py:19
+msgid "تحديث"
+msgstr "تحديث"
+
+#: .\activity_logs\models.py:20
+msgid "حذف"
+msgstr "حذف"
+
+#: .\activity_logs\models.py:21
+msgid "تسجيل الدخول"
+msgstr "تسجيل الدخول"
+
+#: .\activity_logs\models.py:22
+msgid "تسجيل الخروج"
+msgstr "تسجيل الخروج"
+
+#: .\activity_logs\models.py:23
+msgid "فشل تسجيل الدخول"
+msgstr "فشل تسجيل الدخول"
+
+#: .\activity_logs\models.py:24
+msgid "تسجيل الخروج القسري"
+msgstr "تسجيل الخروج القسري"
+
+#: .\activity_logs\models.py:33
+msgid "Actor"
+msgstr "الفاعل"
+
+#: .\activity_logs\models.py:36
+msgid "Action time"
+msgstr "وقت الإجراء"
+
+#: .\activity_logs\models.py:42
+msgid "Action type"
+msgstr "نوع الإجراء"
+
+#: .\activity_logs\models.py:52
+msgid "App name"
+msgstr "اسم التطبيق"
+
+#: .\activity_logs\models.py:59
+msgid "Screen name"
+msgstr "اسم الشاشة"
+
+#: .\activity_logs\models.py:66
+msgid "Object ID"
+msgstr "معرف الكائن"
+
+#: .\activity_logs\models.py:73
+msgid "Object representation"
+msgstr "تمثيل الكائن"
+
+#: .\activity_logs\models.py:79
+msgid "Changes"
+msgstr "التغييرات"
+
+#: .\activity_logs\models.py:85
+msgid "IP address"
+msgstr "عنوان IP"
+
+#: .\activity_logs\models.py:91
+msgid "User agent"
+msgstr "وكيل المستخدم"
+
+#: .\activity_logs\models.py:95
+msgid "Activity log"
+msgstr "سجل النشاط"
+
+#: .\activity_logs\models.py:96
+msgid "Activity logs"
+msgstr "سجلات النشاط"
+
+#: .\apps\basemodel.py:13
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#: .\apps\basemodel.py:17
+msgid "Updated by"
+msgstr "تم التحديث بواسطة"
+
+#: .\apps\basemodel.py:20
+msgid "Created at"
+msgstr "تاريخ الإنشاء"
+
+#: .\apps\basemodel.py:21
+msgid "Updated at"
+msgstr "تاريخ التحديث"
+
+#: .\apps\basemodel.py:22 .\users\models.py:30
+msgid "Active"
+msgstr "نشط"
+
+#: .\apps\baseser.py:12
+msgid "هذا الحقل مطلوب"
+msgstr "هذا الحقل مطلوب"
+
+#: .\apps\baseser.py:13
+msgid "لا يمكن أن يكون هذا الحقل فارغًا"
+msgstr "لا يمكن أن يكون هذا الحقل فارغًا"
+
+#: .\apps\baseser.py:14
+msgid "القيمة غير صحيحة"
+msgstr "القيمة غير صحيحة"
+
+#: .\apps\baseser.py:15
+msgid "لا يمكن أن تكون القيمة فارغة"
+msgstr "لا يمكن أن تكون القيمة فارغة"
+
+#: .\apps\models.py:23
+msgid "app type id"
+msgstr "معرف نوع التطبيق"
+
+#: .\apps\models.py:24
+msgid " name type"
+msgstr "اسم النوع"
+
+#: .\apps\models.py:27
+msgid "app type"
+msgstr "نوع التطبيق"
+
+#: .\apps\models.py:28
+msgid "app types"
+msgstr "أنواع التطبيقات"
+
+#: .\apps\models.py:37
+msgid " App Label"
+msgstr "معرف التطبيق"
+
+#: .\apps\models.py:38
+msgid "name app"
+msgstr "اسم التطبيق"
+
+#: .\apps\models.py:39
+msgid " "
+msgstr ""
+
+#: .\apps\models.py:40
+msgid "The parent app of this app, if any."
+msgstr "التطبيق الأب لهذا التطبيق، إن وجد."
+
+#: .\apps\models.py:40
+msgid "Parent app"
+msgstr "التطبيق الاب"
+
+#: .\apps\models.py:41
+msgid "App URL"
+msgstr "رابط التطبيق"
+
+#: .\apps\models.py:42
+msgid "App icon"
+msgstr "أيقونة التطبيق"
+
+#: .\apps\models.py:43 .\clients\models.py:23 .\clients\models.py:54
+#: .\codings\models.py:56
+msgid "Order"
+msgstr "الترتيب"
+
+#: .\apps\models.py:44 .\codings\models.py:33 .\users\models.py:28
+msgid "Coding categories"
+msgstr "تصنيفات الترميز"
+
+#: .\apps\models.py:45
+msgid "Menu"
+msgstr "قائمة"
+
+#: .\apps\models.py:46 .\apps\models.py:62 .\clients\models.py:25
+#: .\clients\models.py:56 .\codings\models.py:29 .\releases\models.py:13
+msgid "Description"
+msgstr "الوصف"
+
+#: .\apps\models.py:51 .\apps\models.py:60
+msgid "Application"
+msgstr "تطبيق"
+
+#: .\apps\models.py:52
+msgid "Applications"
+msgstr "التطبيقات"
+
+#: .\apps\models.py:59 .\apps\models.py:68
+msgid "App version"
+msgstr "إصدار التطبيق"
+
+#: .\apps\models.py:61
+msgid "The previous version of this app version, if any."
+msgstr "الإصدار السابق لهذا الإصدار، إن وجد."
+
+#: .\apps\models.py:61
+msgid "Previous version"
+msgstr "الإصدار السابق"
+
+#: .\apps\models.py:63
+msgid "Release file"
+msgstr "ملف الإصدار"
+
+#: .\apps\models.py:65 .\releases\models.py:15
+msgid "Release date"
+msgstr "تاريخ الإصدار"
+
+#: .\apps\models.py:69
+msgid "App versions"
+msgstr "إصدارات التطبيقات"
+
+#: .\clients\models.py:20
+msgid "Public name"
+msgstr "الاسم العام"
+
+#: .\clients\models.py:21
+msgid "Private name"
+msgstr "الاسم الخاص"
+
+#: .\clients\models.py:22 .\clients\models.py:53
+msgid "Logo"
+msgstr "الشعار"
+
+#: .\clients\models.py:26 .\clients\models.py:57
+msgid "Right header"
+msgstr "الترويسة اليمنى"
+
+#: .\clients\models.py:27 .\clients\models.py:58
+msgid "Left header"
+msgstr "الترويسة اليسرى"
+
+#: .\clients\models.py:29
+msgid "Beneficiary"
+msgstr "الجهة المستفيدة"
+
+#: .\clients\models.py:30
+msgid "Beneficiaries"
+msgstr "الجهات المستفيدة"
+
+#: .\clients\models.py:37
+msgid "Level name"
+msgstr "اسم المستوى"
+
+#: .\clients\models.py:38
+msgid "The parent level of this level, if any."
+msgstr "المستوى الأعلى لهذا المستوى، إن وجد."
+
+#: .\clients\models.py:38
+msgid "Parent level"
+msgstr "المستوى الأعلى"
+
+#: .\clients\models.py:39
+msgid "The number of structures at this level."
+msgstr "عدد الهياكل في هذا المستوى."
+
+#: .\clients\models.py:39
+msgid "Number of levels"
+msgstr "عدد المستويات"
+
+#: .\clients\models.py:41
+msgid "Structure level"
+msgstr "مستوى الهيكل الإداري"
+
+#: .\clients\models.py:42
+msgid "Structure levels"
+msgstr "مستويات الهيكل الإداري"
+
+#: .\clients\models.py:49
+msgid "Structure name"
+msgstr "اسم الهيكل"
+
+#: .\clients\models.py:51
+msgid "Level"
+msgstr "المستوى"
+
+#: .\clients\models.py:52
+msgid "The parent structure of this structure, if any."
+msgstr "الهيكل الأب لهذا الهيكل، إن وجد."
+
+#: .\clients\models.py:52
+msgid "Parent structure"
+msgstr "الهيكل الاب"
+
+#: .\clients\models.py:55
+msgid "Branch"
+msgstr "فرع"
+
+#: .\clients\models.py:62
+msgid "Structure"
+msgstr "هيكل إداري"
+
+#: .\clients\models.py:63 .\users\models.py:44
+msgid "Structures"
+msgstr "الهياكل الإدارية"
+
+#: .\codings\models.py:9
+msgid "عادي"
+msgstr "عادي"
+
+#: .\codings\models.py:10
+msgid "شجرة"
+msgstr "شجرة"
+
+#: .\codings\models.py:13
+msgid "General name"
+msgstr "الاسم العام"
+
+#: .\codings\models.py:14
+msgid "Specific name"
+msgstr "الاسم الخاص"
+
+#: .\codings\models.py:16
+msgid "Type"
+msgstr "النوع"
+
+#: .\codings\models.py:27
+msgid "Parent category"
+msgstr "معتمد على فئة"
+
+#: .\codings\models.py:32
+msgid "Coding category"
+msgstr "فئة رموز"
+
+#: .\codings\models.py:39
+msgid "Name"
+msgstr "الاسم"
+
+#: .\codings\models.py:46
+msgid "Parent code"
+msgstr "الرمز الأب"
+
+#: .\codings\models.py:52
+msgid "Category"
+msgstr "الفئة"
+
+#: .\codings\models.py:60
+msgid "Code"
+msgstr "رمز"
+
+#: .\codings\models.py:61
+msgid "Codes"
+msgstr "الرموز"
+
+#: .\codings\models.py:73
+msgid "لا يمكن أن يكون الرمز أبًا لنفسه (حلقة دائرية)."
+msgstr "لا يمكن أن يكون الرمز أبًا لنفسه (حلقة دائرية)."
+
+#: .\releases\models.py:12
+msgid "Release name"
+msgstr "اسم الاصدار"
+
+#: .\releases\models.py:14
+msgid "Update"
+msgstr "تحديث"
+
+#: .\releases\models.py:21 .\releases\models.py:22
+msgid "Releases"
+msgstr "الاصدارات"
+
+#: .\users\models.py:26
+msgid "The group roles of this group, if any."
+msgstr "أدوار المجموعة التابعة لهذه المجموعة، إن وجدت."
+
+#: .\users\models.py:29
+msgid "Codings"
+msgstr "الترميزات"
+
+#: .\users\models.py:32
+msgid "Role"
+msgstr "دور"
+
+#: .\users\models.py:33
+msgid "Roles"
+msgstr "الأدوار"
+
+#: .\users\models.py:43
+msgid "The stractures of this user belongs to."
+msgstr "الهياكل الإدارية الخاصة بالمستخدم"
+
+#: .\users\models.py:52
+msgid "Direct manager"
+msgstr "المسؤول المباشر"
+
+#: .\users\models.py:55
+msgid "Data visibility"
+msgstr "صلاحيات رؤية البيانات"
+
+#: .\users\models.py:58
+msgid "بيانات المستخدم فقط"
+msgstr "بيانات المستخدم فقط"
+
+#: .\users\models.py:59
+msgid "بيانات الهيكل الإداري"
+msgstr "بيانات الهيكل الإداري"
+
+#: .\users\models.py:60
+msgid "جميع البيانات في النظام"
+msgstr "جميع البيانات في النظام"
+
+#: .\users\models.py:64
+msgid "Must change password"
+msgstr "يجب تغيير كلمة المرور"
+
+#: .\users\models.py:70
+msgid "User"
+msgstr "مستخدم"
+
+#: .\users\models.py:71
+msgid "Users"
+msgstr "المستخدمين"

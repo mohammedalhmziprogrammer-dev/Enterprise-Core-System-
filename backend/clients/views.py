@@ -1,3 +1,4 @@
+
 from typing import override
 from django.shortcuts import render
 from django.test import Client
@@ -12,6 +13,10 @@ from rest_framework.response import Response
 from users.permissions_utils import *
 from rest_framework.authentication import TokenAuthentication,SessionAuthentication
 from rest_framework.decorators import action
+# from api.base import UnifiedModelViewSet
+from apps.baseview import BaseViewSet
+from api.codes import *
+from api.utils import standard_response
 
 @action(detail=True, methods=["post"])
 def freeze(self, request, pk=None):
@@ -19,7 +24,7 @@ def freeze(self, request, pk=None):
     if side.action=="destroy":
         side.is_active = False
         side.save()
-        return Response({"status": "تم التجميد بدلا من الحذف"})
+        return standard_response(BENEFICIARY_FROZEN)
     
 def get_all_parent_structure(node):
     parent=[node]
@@ -35,10 +40,14 @@ def get_all_children_structure(node):
     return children 
 
 
-class BeneficiaryViewSet(viewsets.ModelViewSet):
+class BeneficiaryViewSet(BaseViewSet):
     queryset=Beneficiary.objects.all()
     serializer_class=BeneficiarySerializer
     permission_classes=[permissions.DjangoModelPermissions,permissions.IsAuthenticated]
+    created_code = BENEFICIARY_CREATED
+    updated_code = BENEFICIARY_UPDATED
+    deleted_code = BENEFICIARY_DELETED
+    frozen_code = BENEFICIARY_FROZEN
     authentication_classes = [JWTAuthentication, SessionAuthentication]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['public_name', 'pravite_name', 'order']
@@ -52,22 +61,33 @@ class BeneficiaryViewSet(viewsets.ModelViewSet):
         structure=benefi.beneficiary_structure.all()
         serializer=StructureSerializer(structure,many=True)
         return Response(serializer.data)
+       
   
 
-class LevelViewSet(viewsets.ModelViewSet):
+class LevelViewSet(BaseViewSet):
     queryset = Level.objects.all()
     serializer_class = LevelSerializer
     permission_classes = [permissions.IsAuthenticated,permissions.DjangoModelPermissions]
+    created_code = LEVEL_CREATED
+    updated_code = LEVEL_UPDATED
+    deleted_code = LEVEL_DELETED
+    frozen_code = LEVEL_FROZEN
     authentication_classes = [JWTAuthentication, SessionAuthentication]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['name']
     search_fields = ['name']
+    ordering_fields = ['name']
+    ordering = ['name']
    
     
-class StructureViewSet(viewsets.ModelViewSet):
+class StructureViewSet(BaseViewSet):
     queryset=Structure.objects.all()
     serializer_class=StructureSerializer
     permission_classes=[permissions.IsAuthenticated,permissions.DjangoModelPermissions]
+    created_code = STRUCTURE_CREATED
+    updated_code = STRUCTURE_UPDATED
+    deleted_code = STRUCTURE_DELETED
+    frozen_code = STRUCTURE_FROZEN
     authentication_classes = [JWTAuthentication, SessionAuthentication]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['name', 'order']
@@ -122,7 +142,7 @@ class StructureViewSet(viewsets.ModelViewSet):
             serializer = StructureSerializer(children, many=True)
             return Response(serializer.data)
         except Structure.DoesNotExist:
-             return Response({'error': 'Structure not found'}, status=404)
+             return standard_response(NOT_FOUND, success=False, status_code=404)
 
     @action(detail=True, methods=['get'], url_path='parent')
     def get_parent(self, request, pk=None):
@@ -135,6 +155,10 @@ class StructureViewSet(viewsets.ModelViewSet):
             serializer = StructureSerializer(parents_list, many=True)
             return Response(serializer.data)
         except Structure.DoesNotExist:
-             return Response({'error': 'Structure not found'}, status=404)
+             return standard_response(NOT_FOUND, success=False, status_code=404)
     
-     
+    # -----------------------------
+    # هذا هو التعديل  
+    # -----------------------------
+    def get_serializer_context(self):
+        return {'request': self.request}

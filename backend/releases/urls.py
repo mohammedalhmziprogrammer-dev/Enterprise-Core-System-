@@ -7,4 +7,7 @@ router.register(r'releases', ReleaseViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    # Update Management URLs
+    path('', include('releases.update_urls')),
 ]
+

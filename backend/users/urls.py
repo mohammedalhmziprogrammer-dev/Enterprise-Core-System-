@@ -8,4 +8,6 @@ router.register(r'group', GroupViewSet, basename='group')
 router.register(r'permissions', PermissionsViewSet, basename='permissions')
 urlpatterns = [
     path('', include(router.urls)), 
+    path("users/<int:user_id>/force-logout/", force_logout_view),
+
 ]

@@ -1,0 +1,15 @@
+# Validation Messages (Arabic by default)
+from django.utils.translation import gettext_lazy as _
+
+REQUIRED = _("هذا الحقل مطلوب")
+INVALID_PHONE = _("رقم الهاتف غير صحيح")
+MIN_LENGTH = _("الحد الأدنى %(n)s أحرف")
+MAX_LENGTH = _("الحد الأقصى %(n)s أحرف")
+INVALID_EMAIL = _("البريد الإلكتروني غير صحيح")
+NUMERIC_ONLY = _("يجب أن يحتوي على أرقام فقط")
+MATCH_PASSWORD = _("كلمتا المرور غير متطابقتين")
+ALPHANUMERIC_ONLY = _("يجب أن يحتوي على أحرف وأرقام فقط")
+NO_SPACES = _("لا يمكن أن يحتوي على مسافات")
+NO_START_WITH_NUMBER = _("لا يمكن أن يبدأ برقم")
+LETTERS_ONLY = _("يجب أن يحتوي على أحرف فقط")
+ARABIC_ONLY = _("يجب أن يحتوي على أحرف عربية فقط")

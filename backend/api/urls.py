@@ -22,16 +22,23 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from django.views.decorators.csrf import csrf_exempt
+
+from users.views import MyTokenObtainPairView
 urlpatterns = [
     path('admin/', admin.site.urls),
     # JWT token endpoints
-    path('token/', csrf_exempt(TokenObtainPairView.as_view()), name='token_obtain_pair'),
+    #path('token/', csrf_exempt(TokenObtainPairView.as_view()), name='token_obtain_pair'),
+    path('token/', csrf_exempt(MyTokenObtainPairView.as_view()), name='token_obtain_pair'),
     path('token/refresh/',csrf_exempt(TokenRefreshView.as_view()), name='token_refresh'),
     path('clients/', include('clients.urls')),
     path('users/', include('users.urls')),
     path('apps/', include('apps.urls')),
     path('codings/', include('codings.urls')),
     path('releases/', include('releases.urls')),
+    path('activity_logs/', include('activity_logs.urls')),
+    path('export/', include('export.urls')),
+    path('crm/', include('crm.urls')),
+
 ]
 from django.conf import settings
 from django.conf.urls.static import static

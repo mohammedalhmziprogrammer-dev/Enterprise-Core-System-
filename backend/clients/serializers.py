@@ -1,7 +1,17 @@
+from apps.validation.validators import min_len, required, no_start_with_number
 from .models import Beneficiary,Level, Structure
 from rest_framework import serializers
+from apps.baseserializer import BaseRulesSerializer
 
-class BeneficiarySerializer(serializers.ModelSerializer):
+class BeneficiarySerializer(BaseRulesSerializer):
+    image_url = serializers.SerializerMethodField()
+    RULES = {
+        "public_name": [(required,), (min_len, 3), (no_start_with_number,)]
+    }
+   
+
+    #structures_count = serializers.SerializerMethodField()
+    #image_url = serializers.SerializerMethodField()
     class Meta:
         model = Beneficiary
         fields = '__all__'
@@ -10,10 +20,24 @@ class BeneficiarySerializer(serializers.ModelSerializer):
 
     def get_structures_count(self, obj):
         return obj.beneficiary_structures.count()
+    def get_image_url(self, obj):
+        request = self.context.get('request')
+        if obj.image and request:
+            return request.build_absolute_uri(obj.image.url)
+        return None 
+
+    def update(self, instance, validated_data):
+        # إذا لم يتم إرسال ملف جديد
+        if 'image' not in validated_data or validated_data.get('image') is None:
+            validated_data.pop('image', None)
+
+        return super().update(instance, validated_data)       
 
         
-class LevelSerializer(serializers.ModelSerializer):
-   
+class LevelSerializer(BaseRulesSerializer):
+    RULES = {
+        "name": [(required,), (min_len, 3), (no_start_with_number,)]
+    }
 
     class Meta:
         model = Level
@@ -25,29 +49,41 @@ class LevelSerializer(serializers.ModelSerializer):
     
 
         
-class StructureSerializer(serializers.ModelSerializer):
+class StructureSerializer(BaseRulesSerializer):
+    RULES = {
+        "name": [(required,), (min_len, 3), (no_start_with_number,)]
+    }
+    
     parent_name = serializers.CharField(source='structure.name', read_only=True)
     #sub_structures = serializers.SerializerMethodField()
-    beneficiary= serializers.CharField()
+    #beneficiary= serializers.CharField()
+    
     level_name = serializers.CharField(source='level.name', read_only=True)
     user_name = serializers.CharField(source='user.username', read_only=True)
-    
-   # parent_structure_name = serializers.CharField(source='structure.name', read_only=True)
+    image_url = serializers.SerializerMethodField()
+
+    def get_image_url(self, obj):
+        request = self.context.get('request')
+        if obj.image and request:
+            return request.build_absolute_uri(obj.image.url)
+        return None
+
+    def update(self, instance, validated_data):
+        # إذا لم يتم إرسال ملف جديد
+        if 'image' not in validated_data or validated_data.get('image') is None:
+            validated_data.pop('image', None)
+
+        return super().update(instance, validated_data)   
+
     class Meta:
         model = Structure
-        # fields=['']
-        fields = ['name','left_address','right_address','beneficiary_name']
+        fields = '__all__'
     
     def get_sub_structures(self, obj):
         return StructureSerializer(obj.sub_structures.all(), many=True).data
     
-    def get_beneficiary_names(self, obj):
-        return [beneficiary.public_name for beneficiary in obj.beneficiary.all()]
-    #def get_user_names(self, obj):
-       # return [user.username for beneficiary in obj.user.all()]
-    class Meta:
-        model=Structure
-        fields='__all__'
+    # def get_beneficiary_names(self, obj):
+    #     return [beneficiary.public_name for beneficiary in obj.beneficiary.all()]
    
 
         

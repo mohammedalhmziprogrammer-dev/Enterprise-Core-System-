@@ -77,6 +77,7 @@ A fully-featured enterprise core system built from scratch, designed to handle c
 • -pip install -r requirements.txt
 • -python manage.py makemigrations
 • -python manage.py migrate
+• -python manage.py createsuperuser
 • -python manage.py runserver
 
 ## ملاحظات

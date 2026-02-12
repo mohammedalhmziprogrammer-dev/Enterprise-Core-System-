@@ -1,51 +1,66 @@
 # Enterprise Core System
 
-Enterprise Core System (Personal Project)
+**Enterprise Core System (Personal Project)**
 
-- Built a complete core system from scratch
-- User management with roles, permissions, and groups
-- Organizational structures and dynamic configurations
-- Program management with data visibility control
-- Dynamic permission system applied automatically to new modules
-- Professional dashboards similar to large enterprise systems
+A fully-featured enterprise core system built from scratch, designed to handle complex organizational workflows with security and flexibility.
 
-Technologies Used:
+### Key Features:
+
+- Complete core system architecture built from scratch
+- **User management** with roles, permissions, and groups
+- **Organizational structures** with dynamic configuration
+- **Program management** with data visibility control
+- **Dynamic permission system** automatically applied to new modules
+- **Screen-level and model-level access control**
+- **Customizable icons** for modules and dashboards
+- **Professional dashboards** similar to large enterprise systems
+- **Clean and professional API** using Django REST Framework
+- Built with scalability, security, and maintainability in mind
+
+### Technologies Used:
 
 - Django, Django REST Framework
 - PostgreSQL
 - Git & GitHub
 
-Role:
+### My Role:
 
 - System Architecture Design
 - Backend & Frontend Development
 - Security & Permissions Logic
-- Dashboard UI Design
 
-نظام أساسي للمؤسسة (مشروع شخصي)
+---
+
+# النظام الأساسي للمؤسسة
+
+**مشروع شخصي لبناء نظام أساسي متكامل**
+
+نظام متكامل لإدارة المؤسسات، يوفر التحكم في المستخدمين والبيانات بطريقة احترافية وآمنة.
+
+### الميزات:
 
 - بناء نظام أساسي متكامل من الصفر
-- إدارة المستخدمين مع الأدوار والصلاحيات والمجموعات
-- الهياكل التنظيمية والتكوينات الديناميكية
-- إدارة البرامج مع التحكم في رؤية البيانات
-- نظام صلاحيات ديناميكي يُطبق تلقائيًا على الوحدات الجديدة
-- لوحات تحكم احترافية تُضاهي أنظمة المؤسسات الكبيرة
+- **إدارة المستخدمين** مع الأدوار والصلاحيات والمجموعات
+- **الهياكل التنظيمية** مع التكوينات الديناميكية
+- **إدارة البرامج** مع التحكم في رؤية البيانات
+- **نظام صلاحيات ديناميكي** يُطبق تلقائيًا على الوحدات الجديدة
+- **التحكم في الصلاحيات على مستوى الموديلات والشاشات**
+- **إمكانية تخصيص الأيقونات** للوحدات ولوحات التحكم
+- **لوحات تحكم احترافية** تُضاهي أنظمة المؤسسات الكبيرة
+- **API احترافي وآمن** باستخدام Django REST Framework
+- تصميم قابل للتوسع والصيانة مع التركيز على الأمان
 
-التقنيات المستخدمة:
+### التقنيات المستخدمة:
 
 - Django، Django REST Framework
-- React.js
 - PostgreSQL
-- Git وGitHub
+- Git و GitHub
 
-الدور:
+### دوري في المشروع:
 
-- تصميم بنية النظام
-- تطوير الواجهة الخلفية والواجهة الأمامية
-- منطق الأمان والصلاحيات
-- تصميم واجهة لوحة التحكم
-
-مشروع Full-Stack باستخدام Django REST Framework و React.
+- تصميم هندسة النظام
+- تطوير الـ Backend والـ Frontend
+- تنفيذ منطق الأمان والصلاحيات
 
 ## التقنيات المستخدمة
 
@@ -63,7 +78,6 @@ Role:
 • -python manage.py makemigrations
 • -python manage.py migrate
 • -python manage.py runserver
-
 
 ## ملاحظات
 

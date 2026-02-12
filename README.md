@@ -54,22 +54,22 @@ Role:
 - React.js / Vite
 - PostgreSQL / SQLite
 
-## طريقة التشغيل
+### طريقة التشغيل
 
-### Backend
+#### Backend
 
--cd backend
--python -m venv venv
--pip install -r requirements.txt
--python manage.py makemigrations
--python manage.py migrate
--python manage.py runserver
+• -cd backend
+• -python -m venv venv
+• -pip install -r requirements.txt
+• -python manage.py makemigrations
+• -python manage.py migrate
+• -python manage.py runserver
 
-### Frontend
+#### Frontend
 
--cd frontend
--npm install
--npm run dev
+• -cd frontend
+• -npm install
+• -npm run dev -python manage.py runserver
 
 ## ملاحظات
 

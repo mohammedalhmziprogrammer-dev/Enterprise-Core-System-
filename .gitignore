@@ -23,3 +23,5 @@ tests_ufuq.rar
 __pycache__/
 *.pyc
 backend/*/migrations/*.pyc
+# Ignore migration files except __init__.py
+backend/*/migrations/[!__init__]*.py
